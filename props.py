@@ -8,25 +8,25 @@ class Inventory(object):
 
     def __init__(self, maxsize):
         super(Inventory, self).__init__()
-        self.__inventory = []
+        self.Inventory = []
         self.MaxSpace = maxsize
 
-    def showAll(self):
-        if len(self.__inventory) == 0:
+    def showAllContents(self):
+        if len(self.Inventory) == 0:
             print("Das Inventar ist leer.")
         else:
             print("Im Inventar befindet sich:")
-            for Gegenstand in self.__inventory:
+            for Gegenstand in self.Inventory:
                 print(Gegenstand.Name)
 
     def addToInventory(self, DasObjekt):
-        self.__inventory.append(DasObjekt)
+        self.Inventory.append(DasObjekt)
         print(DasObjekt.Name + " wurde zu Ihrem Inventar hinzugefügt!")
 
     def deleteFromInventory(self, Gegenstand):
-        for Inventareintrag in self.__inventory:
+        for Inventareintrag in self.Inventory:
             if Gegenstand == Inventareintrag:
-                self.__inventory.remove(Inventareintrag)
+                self.Inventory.remove(Inventareintrag)
                 print(Gegenstand.Name + " wurde aus Ihrem Inventar entfernt!")
 
 
@@ -56,28 +56,50 @@ class Moebelstueck(object):
     JEDES MOEBELSTUECK DARF NUR EINMAL INITIALISIERT WERDEN!
     """
 
-    def __init__(self, nameDesMoebelstuecks, beschreibungDesMoebelstuecks, inventarGroesse, verschlossen, schluessel):
+    def __init__(self, nameDesMoebelstuecks, beschreibungDesMoebelstuecks,
+                 inventarGroesse, inventarInhalt, verschlossen, schluessel):
         super(Moebelstueck, self).__init__()
         self.Name = nameDesMoebelstuecks
         self.Beschreibung = beschreibungDesMoebelstuecks
         self.__Inventargroesse = inventarGroesse
         self.Verschlossen = verschlossen
         self.__Schluessel = schluessel
-        self.__Inhalt = []
+        self.__Inhalt = inventarInhalt
 
-    def ueberschreibeInventar(self, NeuesInventar):
+    def overwriteInventory(self, NeuesInventar):
         """ NeuesInventar = Array! """
         self.__Inhalt = NeuesInventar
         pass
 
-    def gebeInhaltAus (self):
-        if self.Verschlossen == True:
+    def showAllContents (self):
+        if self.Verschlossen:
             print(self.Name + " ist verschlossen.")
         else:
             if len(self.__Inhalt) == 0:
-                print(self.__Name + " ist leer.")
+                print(self.Name + " ist leer.")
             else:
+                print(self.Name + " enthält:")
                 for GegenstandAusInventar in self.__Inhalt:
                     print(GegenstandAusInventar.Name)
+
+
+class Raum (object):
+    """
+    Raeume werden untereinander verbunden und enthalten Moebelstuecke und Gegenstaende.
+    Der Spieler bewegt sich durch die einzelnen Raeume.
+    
+    ausgaengeDesRaumes = Array aus Int. Werten! Jeder Eintrag muss auf Key des GameMap-Arrays zeigen!
+    """
+
+    def __init__(self, idDesRaumes, beschreibungDesRaumes, ausgaengeDesRaumes,
+                 inhaltDesRaumes, verschlossen, schluessel):
+        super(Raum, self).__init__()
+        self.Name = idDesRaumes
+        self.Beschreibung = beschreibungDesRaumes
+        self.Rauminhalt = inhaltDesRaumes
+        self.Verschlossen = verschlossen
+        self.Ausgaenge = ausgaengeDesRaumes
+        self.__Schluessel = schluessel
+
 
 #
