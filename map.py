@@ -16,5 +16,5 @@ GameGegenstaende = [
 ]
 
 GameMoebelstuecke = [
-    Moebelstueck("Alte Schachtel", "Links grün versifft, sonst wie neu.", 12, [Schwert, Bogen], False, False)
+    Moebelstueck("Alte Schachtel", "Links grün versifft, sonst wie neu.", 12, [GameGegenstaende[0], GameGegenstaende[1]], False, False)
 ]

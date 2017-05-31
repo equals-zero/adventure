@@ -9,6 +9,4 @@ Inventar = Inventory(132) # Inventar des Spielers
 
 # Fuege Gegenstaende in Moebelstueck ein.
 
-Schachtel.showAllContents()
-
 print(GameMap[0].Name + " - " + GameMap[0].Beschreibung)
