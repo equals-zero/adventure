@@ -1,12 +1,15 @@
 #!/usr/bin/python3
+from control import Steuerung
 from props import *
 from map import GameMap, GameGegenstaende, GameMoebelstuecke
 
 # Ein bescheuertes Textadventure
 
-Inventar = Inventory(132) # Inventar des Spielers
+Inventar = Inventory(3)  # Inventar des Spielers
 
 
 # Fuege Gegenstaende in Moebelstueck ein.
 
-print(GameMap[0].Name + " - " + GameMap[0].Beschreibung)
+Kont = Steuerung(GameMap, 0)
+
+Kont.BeschreibeRaum(0)

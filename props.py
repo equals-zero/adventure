@@ -20,6 +20,9 @@ class Inventory(object):
                 print(Gegenstand.Name)
 
     def addToInventory(self, DasObjekt):
+        if len(self.Inventory) >= self.MaxSpace:
+            print(DasObjekt.Name + " konnte nicht hinzugefügt werden. "
+                                   "Inventar voll ("+str(len(self.Inventory))+"/"+str(self.MaxSpace)+")!")
         self.Inventory.append(DasObjekt)
         print(DasObjekt.Name + " wurde zu Ihrem Inventar hinzugefügt!")
 
