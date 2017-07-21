@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 from control import Steuerung
+from player import Avatar
 from props import *
 from map import GameMap, GameGegenstaende, GameMoebelstuecke
 

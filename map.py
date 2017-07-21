@@ -4,9 +4,10 @@ from props import Raum, Gegenstand, Moebelstueck
 """ Hier werden die einzelnen Gegenstaende initialisiert. """
 GameGegenstaende = [
     # Gegenstand("Name", "Beschreibung", "Typ", "Wert")
-    Gegenstand("Superschwinger", "Ein Habsburgerischer Degen.", 1, 200),
+    Gegenstand("Seppelpracken", "Ein Habsburgischer Degen.", 1, 200),
     Gegenstand("Langbogen", "Ein klassischer, Englischer Langbogen.", 2, 120),
-    Gegenstand("Rundschild", "Wodaaaaaaan!", 3, 999)
+    Gegenstand("Rundschild", "Wodaaaaaaan!", 3, 999),
+    Gegenstand("Flügelhelm", "Hergestellt in einem Gallischen Dorf...", 3, 300)
 ]
 
 """ Hier werden die einzelnen Moebelstuecke initialisiert. """
@@ -20,8 +21,24 @@ GameMoebelstuecke = [
 """ Hier werden die einzelnen Reaume initialisiert und miteinander verknuepft. """
 GameMap = [
     # Raum("Name", "Beschreibung", "Rauminhalt", "Verschlossen", "Ausgaenge", "Schluessel")
-    Raum("Gute Stube", "Eine aufgeraeumte Stube, hier wohnt wohl ein Autist.",
-         [GameMoebelstuecke[0], GameMoebelstuecke[1]], False, False, False),
-    Raum("Badezimmer", "Der Putz broeckelt von den Waenden.", False, False, False, False)
+    Raum(
+        "Gute Stube",
+        "Eine aufgeraeumte Stube, hier wohnt wohl ein Autist.",
+        False,
+        [
+            GameMoebelstuecke[0],
+            GameMoebelstuecke[1]
+        ],
+        False,
+        False
+    ),
+    Raum(
+        "Badezimmer",
+        "Der Putz broeckelt von den Waenden.",
+        False,
+        False,
+        False,
+        False
+    )
 
 ]

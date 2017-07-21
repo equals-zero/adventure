@@ -32,6 +32,9 @@ class Inventory(object):
                 self.Inventory.remove(Inventareintrag)
                 print(Gegenstand.Name + " wurde aus Ihrem Inventar entfernt!")
 
+    # TODO: Liest die uebergebene Variable als Inventar ein
+    def readInventoryFromSave (self, Savegame):
+        pass
 
 class Gegenstand(object):
     """ 
