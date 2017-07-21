@@ -1,2 +1,0 @@
-# adventure
-Ein dubioses Textadventure
